@@ -56,6 +56,12 @@ dependencies:
         wp-cli/wp-cli: "^2.2.0"
         psy/psysh: "^0.8.4"
 
+hooks:
+    deploy: |
+        if [ "$PLATFORM_BRANCH" != master ]; then
+           php wp-multisite-update-domains.php
+        fi
+
 # The mounts that will be performed when the package is deployed.
 mounts:
     "web/wp-content/cache":
