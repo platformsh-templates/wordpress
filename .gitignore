@@ -6,7 +6,7 @@
 /vendor/
 
 # Temporary and build directories.
-/wordpress/
+/wp/
 /_www
 
 # Standard Wordpress files and folders:
