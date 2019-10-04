@@ -12,6 +12,12 @@ if (!$config->isValidPlatform()) {
     die("Not in a Platform.sh Environment.");
 }
 
+$primaryRouteArray = array_filter($config->routes(), function($k) {
+	return $k['primary'] == true;
+});
+
+$primaryDomain = parse_url(key($primaryRouteArray), PHP_URL_HOST);
+
 // Set default scheme and hostname.
 $site_scheme = 'http';
 $site_host = 'localhost';
@@ -21,6 +27,7 @@ if (isset($_SERVER['HTTP_HOST'])) {
   $site_host = $_SERVER['HTTP_HOST'];
   $site_scheme = !empty($_SERVER['HTTPS']) ? 'https' : 'http';
 }
+
 
 if ($config->hasRelationship('database')) {
   // This is where we get the relationships of our application dynamically
@@ -97,6 +104,13 @@ else {
     include(dirname(__FILE__, 2) . '/wp-config-local.php');
   }
 }
+define('WP_ALLOW_MULTISITE', true);
+define('MULTISITE', true);
+define('SUBDOMAIN_INSTALL', true);
+define('DOMAIN_CURRENT_SITE', $primaryDomain);
+define('PATH_CURRENT_SITE', '/');
+define('SITE_ID_CURRENT_SITE', 1);
+define('BLOG_ID_CURRENT_SITE', 1);
 
 // Do not put a slash "/" at the end.
 // https://codex.wordpress.org/Editing_wp-config.php#WP_HOME
