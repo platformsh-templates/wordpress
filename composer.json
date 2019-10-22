@@ -1,53 +1,48 @@
 {
-  "name": "platformsh/template-wordpress",
-  "description": "WordPress Composer-ified. A template for managing WordPress core, plugins, and themes.",
+  "name": "johnpbloch/wordpress",
+  "description": "WordPress is open source software you can use to create a beautiful website, blog, or app.",
   "keywords": [
     "wordpress",
     "blog",
-    "cms",
-    "template"
+    "cms"
   ],
-  "homepage": "https://github.com/platformsh-templates/wordpress",
-  "type": "project",
-  "license": "GPL-2.0-or-later",
-  "repositories": [
+  "type": "package",
+  "homepage": "http://wordpress.org/",
+  "license": "GPL-2.0+",
+  "authors": [
     {
-      "type": "composer",
-      "url": "https://wpackagist.org"
-    },
-    {
-      "type": "vcs",
-      "url": "git@github.com:platformsh/platformsh-config-reader-php.git"
+      "name": "WordPress Community",
+      "homepage": "http://wordpress.org/about/"
     }
   ],
-  "require": {
-    "platformsh/config-reader": "^2.0",
-    "johnpbloch/wordpress": "^5.0"
+  "support": {
+    "issues": "http://core.trac.wordpress.org/",
+    "forum": "http://wordpress.org/support/",
+    "wiki": "http://codex.wordpress.org/",
+    "irc": "irc://irc.freenode.net/wordpress",
+    "source": "http://core.trac.wordpress.org/browser"
   },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "config": {
-    "discard-changes": true,
-    "sort-packages": true
+  "require": {
+    "php": ">=5.6.20",
+    "johnpbloch/wordpress-core-installer": "^1.0",
+    "johnpbloch/wordpress-core": "5.2.4",
+    "platformsh/config-reader": "^2.3"
   },
   "scripts": {
-    "update-packages": [
-      "cp -rf wp/* web/",
-      "rm -rf wp"
+    "movewpconfig": [
+      "mv wp-config.php wordpress/"
     ],
-    "post-install-cmd": "@update-packages",
-    "post-update-cmd": "@update-packages"
+    "post-install-cmd": "@movewpconfig"
   },
   "extra": {
-    "wordpress-install-dir": "wp",
     "installer-paths": {
-      "web/wp-content/plugins/{$name}": [
+      "wordpress/wp-content/plugins/{$name}": [
         "type:wordpress-plugin"
       ],
-      "web/wp-content/themes/{$name}": [
+      "wordpress/wp-content/themes/{$name}": [
         "type:wordpress-theme"
       ],
-      "web/wp-content/mu-plugins/{$name}": [
+      "wordpress/wp-content/mu-plugins/{$name}": [
         "type:wordpress-muplugin"
       ]
     }
