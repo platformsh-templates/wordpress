@@ -25,7 +25,7 @@
   "require": {
     "php": ">=5.6.20",
     "johnpbloch/wordpress-core-installer": "^1.0",
-    "johnpbloch/wordpress-core": "5.2.4",
+    "johnpbloch/wordpress-core": "5.3.0",
     "platformsh/config-reader": "^2.3"
   },
   "scripts": {
