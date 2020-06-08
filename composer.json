@@ -25,14 +25,14 @@
   "require": {
     "php": ">=5.6.20",
     "johnpbloch/wordpress-core-installer": "^1.0",
-    "johnpbloch/wordpress-core": "5.3.2",
+    "johnpbloch/wordpress-core": "5.4.1",
     "platformsh/config-reader": "^2.3"
   },
   "scripts": {
-    "movewpconfig": [
-      "mv wp-config.php wordpress/"
+    "copywpconfig": [
+      "cp wp-config.php wordpress/"
     ],
-    "post-install-cmd": "@movewpconfig"
+    "post-install-cmd": "@copywpconfig"
   },
   "extra": {
     "installer-paths": {
