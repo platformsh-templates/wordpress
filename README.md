@@ -17,6 +17,11 @@ WordPress is a blogging and lightweight CMS written in PHP.
 * Automatic TLS certificates
 * Composer-based build
 
+## Getting Started
+To help you get started, several guides and how-to's are available on our [community pages](https://community.platform.sh).
+- [How to install wordpress plugins and themes with composer](https://community.platform.sh/t/how-to-install-wordpress-plugins-and-themes-with-composer/507)
+- [How to install custom / private Wordpress plugins and themes with Composer](https://community.platform.sh/t/how-to-install-custom-private-wordpress-plugins-and-themes-with-composer/622)
+
 ## Post-install
 
 1. Run through the WordPress installer as normal.  You will not be asked for database credentials as those are already provided.
