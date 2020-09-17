@@ -25,7 +25,7 @@
   "require": {
     "php": ">=5.6.20",
     "johnpbloch/wordpress-core-installer": "^1.0 || ^2.0",
-    "johnpbloch/wordpress-core": "5.4.2",
+    "johnpbloch/wordpress-core": "5.5.1",
     "platformsh/config-reader": "^2.3"
   },
   "scripts": {
@@ -46,5 +46,11 @@
         "type:wordpress-muplugin"
       ]
     }
-  }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ]
 }
