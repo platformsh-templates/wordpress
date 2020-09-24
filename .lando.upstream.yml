@@ -1,0 +1,11 @@
+# This file sets some good defaults for the local development of a platform.sh
+# WordPress project using Lando.
+#
+# Note that you should not edit this file so it can continue to receive upstream
+# updates. If you wish to change the values below then override them in your
+# normal .lando.yml.
+
+# These are WordPress specific tools that are commonly used during development.
+tooling:
+  wp:
+    service: app
