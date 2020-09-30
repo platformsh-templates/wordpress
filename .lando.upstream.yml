@@ -7,7 +7,7 @@
 
 # These both allow you to test this template without needing a site on platform.sh
 # However you will want to replace them in your .lando.yml
-name: laravel-wordpress
+name: wordpress-platformsh
 recipe: platformsh
 
 # These are WordPress specific tools that are commonly used during development.
