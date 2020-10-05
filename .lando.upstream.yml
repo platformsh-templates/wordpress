@@ -1,0 +1,16 @@
+# This file sets some good defaults for the local development of a platform.sh
+# WordPress project using Lando.
+#
+# Note that you should not edit this file so it can continue to receive upstream
+# updates. If you wish to change the values below then override them in your
+# normal .lando.yml.
+
+# These both allow you to test this template without needing a site on platform.sh
+# However you will want to replace them in your .lando.yml
+name: wordpress-platformsh
+recipe: platformsh
+
+# These are WordPress specific tools that are commonly used during development.
+tooling:
+  wp:
+    service: app
